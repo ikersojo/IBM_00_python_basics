@@ -3,22 +3,22 @@
 #                                                         :::      ::::::::    #
 #    whois.py                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 13:44:35 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:23:32 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:34:47 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import sys
+from sys import argv
 
 if (__name__ == '__main__'):
-	if (len(sys.argv) > 2):
+	if (len(argv) > 2):
 		print("AssertionError: more than one argument are provided")
 		exit(2)
-	if (len(sys.argv) == 2):
+	if (len(argv) == 2):
 		try:
-			n = int(sys.argv[1])
+			n = int(argv[1])
 		except:
 			print("AssertionError: argument is not an integer")
 			exit(3)

@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    kata02.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 16:37:43 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 10:43:17 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:34:14 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Put this at the top of your kata02.py file
 kata = (2019, 9, 25, 3, 30)
 
-print(f"{kata[1]:02d}/{kata[2]:02d}/{kata[0]:04d} {kata[3]:02d}:{kata[4]:02d}")
+yyyy, mm, dd, h, m = kata
+print(f"{dd:02d}/{mm:02d}/{yyyy:04d} {h:02d}:{m:02d}")

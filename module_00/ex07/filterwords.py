@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    filterwords.py                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/06 19:11:03 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 11:06:22 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:33:41 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import sys
+from string import punctuation
 
 if (__name__ == "__main__"):
 	if (len(sys.argv) == 3):

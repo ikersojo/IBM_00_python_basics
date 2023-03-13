@@ -1,6 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    answers.txt                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/13 20:34:58 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 pip list
 pip show numpy
 pip uninstall numpy
 pip install numpy
 
-# to get the requirements.txt use: "python freeze > requirements.txt"
+# to get the requirements.txt use: "pip freeze > requirements.txt"
+
+# alternative is to use "conda" in all the commands above intead of "pip". If in env, they should return the same

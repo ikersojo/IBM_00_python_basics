@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    exec.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 13:32:50 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 10:23:35 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:34:52 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import sys
+from sys import argv
 
 if (__name__ == '__main__'):
-	if (len(sys.argv) >= 2):
-		string = " ".join(sys.argv[1::])
+	if (len(argv) >= 2):
+		string = " ".join(argv[1::])
 		rev = string[::-1].swapcase()
 		print(rev)

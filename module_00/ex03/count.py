@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    count.py                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 13:56:23 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:24:50 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:34:43 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import sys
+from sys import argv
+from string import punctuation
 
 
 def text_analyzer(s='None'):
@@ -18,10 +19,11 @@ def text_analyzer(s='None'):
 	This function counts the number of upper characters, lower characters,
 	punctuation and spaces in a given text.
 	'''
+	if (type(s) != str or s.isnumeric()):
+		print("AssertionError: argument is not a string")
+		return
 	if (s == 'None'):
 		s = input("What is the text to analyze?\n>> ")
-	if (type(s) != str):
-		print("AssertionError: argument is not a string")
 	sp = 0
 	l = 0
 	u = 0
@@ -34,7 +36,7 @@ def text_analyzer(s='None'):
 			l += 1
 		elif (c.isupper()):
 			u += 1
-		elif (c in '!.,?:;'):
+		elif (c in punctuation):
 			m += 1
 		count += 1
 	print(f"The text contains {count} character(s).")
@@ -45,9 +47,9 @@ def text_analyzer(s='None'):
 
 
 if (__name__ == '__main__'):
-	if (len(sys.argv) == 2):
-		text_analyzer(sys.argv[1])
-	elif (len(sys.argv) == 1):
+	if (len(argv) == 2):
+		text_analyzer(argv[1])
+	elif (len(argv) == 1):
 		text_analyzer()
 	else:
 		print("Error! Pass a single string argument.")

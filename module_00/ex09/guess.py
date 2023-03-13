@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    guess.py                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/07 13:06:16 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:33:10 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:33:18 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ if (__name__ == "__main__"):
 	n = randint(1, 99)
 	i = 0
 	while (True):
-		i += 1
 		guess_str = input(">> ")
 		if (guess_str == "exit"):
 			print("Goodbye!")
 			break
+		i += 1
 		try:
 			guess = int(guess_str)
 			if (guess == n):

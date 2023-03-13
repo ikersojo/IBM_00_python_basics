@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    kata01.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 16:27:41 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:29:14 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:34:22 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ kata = {
 	'Ruby': 'Yukihiro Matsumoto',
 	'PHP': 'Rasmus Lerdorf',
 	}
+
 
 for key, value in kata.items():
 	print(f"{key} was created by {value}")

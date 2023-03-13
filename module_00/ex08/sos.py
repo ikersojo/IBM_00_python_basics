@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    sos.py                                             :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/07 12:14:06 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:34:04 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/13 20:33:33 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import sys
+from sys import argv
 
 morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
 	 	'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
@@ -23,8 +23,8 @@ morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
 
 
 if (__name__ == "__main__"):
-	if (len(sys.argv) > 1):
-		s = " ".join(sys.argv[1::]).upper()
+	if (len(argv) > 1):
+		s = " ".join(argv[1::]).upper()
 		for c in s:
 			if (not(c.isalnum or c.isspace)):
 				print("ERROR")
