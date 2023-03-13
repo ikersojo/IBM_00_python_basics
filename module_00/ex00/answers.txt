@@ -1,0 +1,6 @@
+pip list
+pip show numpy
+pip uninstall numpy
+pip install numpy
+
+# to get the requirements.txt use: "python freeze > requirements.txt"
