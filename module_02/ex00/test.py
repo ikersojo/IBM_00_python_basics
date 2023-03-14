@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    test.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 17:31:54 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/14 17:32:25 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:32:58 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ from ft_filter import ft_filter
 from ft_map import ft_map
 from ft_reduce import ft_reduce
 from functools import reduce
+
 
 if (__name__ == '__main__'):
 

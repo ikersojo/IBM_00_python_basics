@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/27 19:09:26 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/01 15:29:57 by isojo-go         ###   ########.fr        #
+#    Created: 2023/03/14 22:40:45 by isojo-go          #+#    #+#              #
+#    Updated: 2023/03/14 22:50:34 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 def what_are_the_vars(*args, **kwargs):
 	return(ObjectC(args,kwargs))
 
+
 class ObjectC(object):
 	def __init__(self, *args, **kwargs):
-		dict = args[1]
-		for k, v in dict.items():
-			setattr(self, k, v)
+		self.__dict__.update(kwargs)
 		lst = args[0]
 		for i in range(0, len(lst)):
 			setattr(self, f'var_{i}', lst[i])
+
 
 def doom_printer(obj):
 	if obj is None:
@@ -32,6 +32,7 @@ def doom_printer(obj):
 			value = getattr(obj, attr)
 			print("{}: {}".format(attr, value))
 	print("end")
+
 
 if __name__ == "__main__":
 	obj = what_are_the_vars(7)

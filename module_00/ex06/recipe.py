@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 20:33:50 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:35:16 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,6 @@ if (__name__ == "__main__"):
 		"cake": cake,
 		"salad": salad
 	}
-
 	opt = 0
 	print("Welcome to the Python Cookbook !")
 	while (opt != 5):

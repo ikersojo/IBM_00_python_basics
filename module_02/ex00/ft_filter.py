@@ -3,16 +3,12 @@
 #                                                         :::      ::::::::    #
 #    ft_filter.py                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 17:25:06 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/14 17:26:58 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:31:21 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-'''
-
-'''
 
 def input_check(func):
 	def decorator(function_to_apply, iterable):

@@ -6,7 +6,7 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 20:33:33 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:34:59 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,13 @@ morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
 		'2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....',
 		'7': '--...', '8': '---..', '9': '----.'}
 
-
 if (__name__ == "__main__"):
 	if (len(argv) > 1):
 		s = " ".join(argv[1::]).upper()
 		for c in s:
 			if (not(c.isalnum or c.isspace)):
 				print("ERROR")
-				exit(0)
+				exit(1)
 		s = s.upper()
 		s = s.replace(" ", "/")
 		for key, val in morse.items():

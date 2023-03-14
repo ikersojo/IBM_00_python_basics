@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    eval.py                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 13:53:56 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/14 16:51:35 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:31:21 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ class Evaluator:
 			or len(coefs) != len(words)):
 			return -1
 		lst = list(zip(coefs, words))
-		# print (lst)
+		# print (lst) # uncomment to see what zip is doing
 		res = 0
 		for i in range(0, len(lst)):
 			res += lst[i][0] * len(lst[i][1])
@@ -28,7 +28,7 @@ class Evaluator:
 			or len(coefs) != len(words)):
 			return -1
 		lst = list(enumerate(words))
-		# print (lst)
+		# print (lst) # uncomment to see what enumerate is doing
 		res = 0
 		for i in range(0, len(lst)):
 			res += coefs[lst[i][0]] * len(lst[i][1])

@@ -6,11 +6,12 @@
 #    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/13 20:33:07 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 20:35:08 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/14 22:34:45 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 from time import time, sleep
+
 
 def print_progress_bar(prct):
 	width = 25
