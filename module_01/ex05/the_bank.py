@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    the_bank.py                                        :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/21 00:01:08 by isojo-go          #+#    #+#              #
-#    Updated: 2023/02/22 00:17:36 by isojo-go         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 class Account(object):
 
@@ -26,8 +15,10 @@ class Account(object):
 		if not isinstance(self.name, str):
 			raise AttributeError("Attribute name must be a str object.")
 
+
 	def transfer(self, amount):
 		self.value += amount
+
 
 	def	check_validity(self):
 		if (not isinstance(self, Account)):
@@ -57,67 +48,72 @@ class Account(object):
 		print(f"{self.name} is a valid account object.")
 		return True
 
+
 class Bank():
 	'''The bank'''
 	def __init__(self):
 		self.accounts = []
 
+
 	def __str__(self):
-		str = "Valid bank accounts:\n"
+		str = "Bank accounts:\n"
 		for ac in self.accounts:
 			if hasattr(ac, 'name'):
 				str += " -" + ac.name + "\n"
 		return str
 
-	def add(self, new_account):
-		''' Add a new account (ac) in the Bank
+
+	def add(self, new_account=None):
+		'''
+		Add new_account in the Bank
 		@ac: Account() new account to append
 		@return True if success, False if an error occured
 		'''
+		if (new_account == None):
+			print("Please include a valid Account object as argument.")
+			return False
+		if (not isinstance(new_account, Account)):
+			print(f"{new_account.name} is not a valid Account object.")
+			return False
 		for ac in self.accounts:
 			if (ac.name == new_account):
-				print(f"{new_account.name} already in the bank.")
+				print(f"{new_account.name} already exists.")
 				return False
 		self.accounts.append(new_account)
 		print(f"{new_account.name} added to the bank.")
-		if (new_account.check_validity()):
-			return True
-		else:
-			return False
+		return True
+
 
 	def transfer(self, origin, dest, amount):
-		"""" Perform the fund transfer
+		'''
+		Perform the fund transfer
 		@origin: str(name) of the first account
 		@dest: str(name) of the destination account
 		@amount: float(amount) amount to transfer
 		@return True if success, False if an error occured
-		"""
+		'''
 		if (amount < 0):
-			return False
-		if (len(self.accounts) < 1):
 			return False
 		for ac in self.accounts:
 			if (ac.name == origin):
-				if (ac.check_validity()):
-					origin_ac = ac
-				else:
-					return False
+				origin_ac = ac
 			if (ac.name == dest):
-				if (ac.check_validity()):
-					dest_ac = ac
-				else:
-					return False
-		if (origin_ac.name != dest_ac.name):
-			origin_ac.value -= amount
-			dest_ac.value += amount
+				dest_ac = ac
+		if (not(origin_ac.check_validity() and dest_ac.check_validity())):
+			return False
+		if (origin_ac.name != dest_ac.name and origin_ac.value >= amount):
+			origin_ac.transfer(-1 * amount)
+			dest_ac.transfer(amount)
 			print(f"{amount} transferred from {origin_ac.name} to {dest_ac.name}.")
 		return True
 
+
 	def fix_account(self, name): 
-		""" fix account associated to name if corrupted
+		'''
+		Fix account associated to name if corrupted
 		@name: str(name) of the account
 		@return True if success, False if an error occured
-		"""
+		'''
 		if (type(name) != str):
 			return False
 		for ac in self.accounts:
@@ -129,8 +125,8 @@ class Bank():
 		if (not hasattr(target_ac, 'id') or type(ac.__dict__['id']) != int):
 			target_ac.__setattr__('id', Account.ID_COUNT)
 			Account.ID_COUNT += 1
-		if (not hasattr(target_ac, 'name') or type(ac.__dict__['name']) != str):
-			target_ac.__setattr__('name', 'user id: ' + str(target_ac.ID_COUNT))
+		# if (not hasattr(target_ac, 'name') or type(ac.__dict__['name']) != str):
+		# 	target_ac.__setattr__('name', 'user id: ' + str(target_ac.ID_COUNT))
 		if (not hasattr(target_ac, 'value')):
 			target_ac.__setattr__('value', 0)
 		if (not(type(target_ac.__dict__['value']) == int or type(target_ac.__dict__['value']) == float)):
@@ -149,7 +145,10 @@ class Bank():
 		if (addr == 0):
 			target_ac.__setattr__('addr', 'no address defined')
 		if (len(target_ac.__dict__.keys()) % 2 != 0):
-			target_ac.__setattr__('dummy', 'dummy')
+			if (hasattr(target_ac, 'dummy')):
+				target_ac.__delattr__('dummy')
+			else:
+				target_ac.__setattr__('dummy', 'dummy')
 		print(f"{target_ac.name} fixed.")
 		return True
 

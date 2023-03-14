@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    recipe.py                                          :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/09 22:39:55 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/13 12:43:09 by isojo-go         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 class Recipe:
 	'''Recipe Class. Recipe(name, lvl, time, ingredients, type, description)'''
@@ -41,15 +30,3 @@ class Recipe:
 		print(f"    Description: {self.descr}\n")
 		print("\033[0m")
 
-if (__name__ == '__main__'):
-	print("\033[33mbuilt-in test...\033[0m")
-	test1 = Recipe("test1", 5, 60, ["asd", "zxc", "wer"], "lunch", "hi!")
-	test1.print_recipe()
-	print(str(test1))
-	print(test1.__doc__)
-	test2 = Recipe("test2", 1, 60, ["asd", "zxc", "wer"], "lunch")
-	test2.print_recipe()
-	test3 = Recipe("test3", 2, 60, ["asd", "zxc", "wer"], "dessert")
-	test3.print_recipe()
-	test4 = Recipe("test4", 3, 60, ["asd", "zxc", "wer"], "starter")
-	test4.print_recipe()
