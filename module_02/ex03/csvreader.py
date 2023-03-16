@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    csvreader.py                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: isojo-go <isojo-go@student.42urduliz.co    +#+  +:+       +#+         #
+#    By: isojo-go <isojo-go@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/01 22:12:39 by isojo-go          #+#    #+#              #
-#    Updated: 2023/03/14 23:35:23 by isojo-go         ###   ########.fr        #
+#    Updated: 2023/03/16 10:44:22 by isojo-go         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,15 @@ class CsvReader():
 	
 	def importfile(self):
 		lst = []
-		for line in self.file.read().split('\n'):
-			lst.append(line.split(self.sep))
+		items = -1
+		lines = self.file.read().split('\n')
+		for line in lines:
+			values = line.split(self.sep)
+			if (items == -1):
+				items = len(values)
+			if (items != len(values)):
+				return None
+			lst.append(values)
 		return lst
 
 	def getdata(self):
@@ -46,6 +53,8 @@ class CsvReader():
 			nested list (list(list, list, ...)) representing the data.
 		'''
 		lst = self.importfile()
+		if (lst == None):
+			return None
 		if self.header:
 			lst = lst[1:]
 		lst = lst[self.skip_top:len(lst) - self.skip_bottom]
@@ -59,6 +68,8 @@ class CsvReader():
 			None: (when self.header is False).
 		'''
 		lst = self.importfile()
+		if (lst == None):
+			return None
 		if self.header == True:
 			return lst[0]
 		else:
